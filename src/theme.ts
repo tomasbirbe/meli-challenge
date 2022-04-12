@@ -1,10 +1,12 @@
-import {extendTheme, theme} from "@chakra-ui/react";
+import { extendTheme, theme } from "@chakra-ui/react";
+import { cssReset } from "src/cssCustomReset";
 
 export default extendTheme({
   styles: {
     global: {
-      body: {
-        color: "blackAlpha.900",
+      ...cssReset,
+      "input::placeholder": {
+        color: "blackAlpha.300",
       },
     },
   },
@@ -42,14 +44,14 @@ export default extendTheme({
   components: {
     Link: {
       variants: {
-        unstyled: ({colorScheme = "blackAlpha"}) => ({
+        unstyled: ({ colorScheme = "blackAlpha" }) => ({
           color: `${colorScheme}.700`,
           _hover: {
             color: `${colorScheme}.800`,
             textDecoration: "none",
           },
         }),
-        color: ({colorScheme = "secondary"}) => ({
+        color: ({ colorScheme = "secondary" }) => ({
           color: `${colorScheme}.500`,
           _hover: {
             color: `${colorScheme}.600`,
@@ -68,12 +70,20 @@ export default extendTheme({
         },
       },
       variants: {
-        ghost: ({colorScheme = "secondary"}) => ({
+        ghost: ({ colorScheme = "secondary" }) => ({
           backgroundColor: `${colorScheme}.50`,
           ":hover, :focus": {
             backgroundColor: `${colorScheme}.100`,
           },
         }),
+        unstyled: {
+          backgroundColor: "transparent",
+          hover: {},
+          active: {},
+          focus: {},
+          padding: 0,
+          margin: 0,
+        },
       },
     },
     Input: {
@@ -97,6 +107,7 @@ export default extendTheme({
             borderColor: "gray.300",
           },
         },
+        searchbar: {},
       },
     },
   },
