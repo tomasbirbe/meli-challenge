@@ -65,7 +65,14 @@ export default function Nav() {
           </Button>
         </Stack>
       </Stack>
-      <Stack align="center" direction="row" justify="space-between" paddingInline={2}>
+
+      <Stack
+        align="center"
+        direction="row"
+        justify="space-between"
+        paddingInlineEnd={1}
+        paddingInlineStart={2}
+      >
         <Stack align="center" direction="row" spacing={1}>
           <Icon as={BiMap} marginBlockEnd={2} />
           <Text color="blackAlpha.600" fontSize={13}>
@@ -73,7 +80,7 @@ export default function Nav() {
           </Text>
         </Stack>
         <Button height="fit-content" minWidth="fit-content" variant="unstyled">
-          <Icon as={IoIosArrowForward} color="blackAlpha.500" />
+          <Icon as={IoIosArrowForward} color="blackAlpha.500" marginBlockEnd={1} />
         </Button>
       </Stack>
     </Stack>
