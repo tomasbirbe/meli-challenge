@@ -7,7 +7,7 @@ import Routes from "./routes";
 const App: React.FC = () => {
   return (
     <Container alignSelf="center" maxW="100%" paddingX={0}>
-      <Stack>
+      <Stack spacing={0}>
         <Nav />
         <Box>
           <Routes />

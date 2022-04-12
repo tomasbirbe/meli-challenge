@@ -10,6 +10,10 @@ export default extendTheme({
       },
     },
   },
+  shadows: {
+    innerLg: "inset 0px 5px 6px -6px rgba(0,0,0,0.5)",
+  },
+
   colors: {
     primary: {
       50: "#FFF9BD",
