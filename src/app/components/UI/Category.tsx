@@ -21,7 +21,7 @@ export default function Category({ category, image }: Props) {
         <Image height="48px" src={image} width="48px" />
       </Box>
       <Text fontSize={12} textAlign="center">
-        {category}
+        {category} {image}
       </Text>
     </Stack>
   );
