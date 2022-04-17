@@ -1,28 +1,25 @@
 import { Icon, Stack, Text } from "@chakra-ui/react";
-import React from "react";
-import Product from "src/app/components/UI/Product";
-import Category from "src/app/components/UI/Category";
-import allForSales from "assets/categories/all-for-sales.webp";
-import beds from "assets/categories/beds.webp";
-import below2000 from "assets/categories/below2000.webp";
-import bicycles from "assets/categories/bicycles.webp";
-import books from "assets/categories/books.webp";
-import clothes from "assets/categories/clothes.webp";
-import fitness from "assets/categories/fitness.webp";
-import gaming from "assets/categories/gaming.webp";
-import headsets from "assets/categories/headsets.webp";
-import heaters from "assets/categories/heaters.webp";
-import lightingForSales from "assets/categories/lightingForSales.webp";
-import notebooks from "assets/categories/notebooks.webp";
-import shoes from "assets/categories/shoes.webp";
-import smartphones from "assets/categories/smartphones.webp";
-import speakers from "assets/categories/speakers.webp";
-import supermarket from "assets/categories/supermarket.webp";
-import tools from "assets/categories/tools.webp";
-import tvs from "assets/categories/tvs.webp";
+import React, { useEffect, useState } from "react";
+import Product from "src/app/components/Product";
+import Category from "src/app/components/Category";
+import { api } from "src/app/services/api";
 import { MdKeyboardArrowDown } from "react-icons/md";
+export interface Category {
+  id: number;
+  description: string;
+  imageUrl: string;
+}
 
 export default function HomeScreen() {
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  useEffect(() => {
+    api
+      .getCategories()
+      .then((data) => setCategories(data))
+      .catch((error) => console.log(error));
+  });
+
   return (
     <>
       <Stack
@@ -58,24 +55,17 @@ export default function HomeScreen() {
         paddingBlock={4}
         paddingInline={6}
       >
-        <Category category="Todas las ofertas" image={allForSales} />
-        <Category category="Ofertas relampago" image={lightingForSales} />
-        <Category category="Celulares" image={smartphones} />
-        <Category category="Notebooks" image={notebooks} />
-        <Category category="Herramientas" image={tools} />
-        <Category category="Menos de $2000" image={below2000} />
-        <Category category="Supermercado" image={supermarket} />
-        <Category category="Zapatillas" image={shoes} />
-        <Category category="Auriculares" image={headsets} />
-        <Category category="Televisiones" image={tvs} />
-        <Category category="Bicicletas" image={bicycles} />
-        <Category category="Colchones" image={beds} />
-        <Category category="Parlantes" image={speakers} />
-        <Category category="Calefacción" image={heaters} />
-        <Category category="Videojuegos" image={gaming} />
-        <Category category="Deportes y fitness" image={fitness} />
-        <Category category="Libros" image={books} />
-        <Category category="Moda" image={clothes} />
+        {categories.length ? (
+          categories.map((category) => (
+            <Category
+              key={category.id}
+              category={category.description}
+              imageUrl={category.imageUrl}
+            />
+          ))
+        ) : (
+          <Text>Cargando...</Text>
+        )}
       </Stack>
 
       <Stack direction="row" spacing={0} width="full" wrap="wrap">

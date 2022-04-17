@@ -8,7 +8,7 @@ test("renders without crashing", () => {
   const category = "Moda";
   const image = "https://anyurl.com";
 
-  const component = render(<Category category={category} image={image} />);
+  const component = render(<Category category={category} imageUrl={image} />);
 
   const img = component.container.querySelector("img");
 
