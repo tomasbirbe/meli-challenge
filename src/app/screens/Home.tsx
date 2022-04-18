@@ -1,24 +1,24 @@
 import { Icon, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import Product from "src/app/components/Product";
+import type { Category as CategoryType } from "src/app/types";
 import Category from "src/app/components/Category";
 import { api } from "src/app/services/api";
-import { MdKeyboardArrowDown } from "react-icons/md";
-export interface Category {
-  id: number;
-  description: string;
-  imageUrl: string;
-}
+import apiProducts from "src/product/mock";
+import { Product as ProductType } from "src/product/types";
 
 export default function HomeScreen() {
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [categories, setCategories] = useState<CategoryType[]>([]);
+  const [products, setProducts] = useState<ProductType[]>();
 
   useEffect(() => {
+    setProducts([apiProducts.product]);
     api
       .getCategories()
       .then((data) => setCategories(data))
       .catch((error) => console.log(error));
-  });
+  }, []);
 
   return (
     <>
@@ -69,94 +69,18 @@ export default function HomeScreen() {
       </Stack>
 
       <Stack direction="row" spacing={0} width="full" wrap="wrap">
-        <Product
-          description="Consola Retro Portatil Multiplataformas X7"
-          discount={5}
-          freeShip={true}
-          image=""
-          installments={6}
-          isFullShip={true}
-          offerOfDay={true}
-          prevPrice={9000}
-          priceToBuy={8169}
-        />
-        <Product
-          description="Consola Retro Portatil Multiplataformas X7"
-          discount={5}
-          freeShip={true}
-          image=""
-          installments={6}
-          isFullShip={true}
-          offerOfDay={true}
-          prevPrice={9000}
-          priceToBuy={8169}
-        />
-        <Product
-          description="Consola Retro Portatil Multiplataformas X7"
-          discount={5}
-          freeShip={true}
-          image=""
-          installments={6}
-          isFullShip={true}
-          offerOfDay={true}
-          prevPrice={9000}
-          priceToBuy={8169}
-        />
-        <Product
-          description="Consola Retro Portatil Multiplataformas X7"
-          discount={5}
-          freeShip={true}
-          image=""
-          installments={6}
-          isFullShip={true}
-          offerOfDay={true}
-          prevPrice={9000}
-          priceToBuy={8169}
-        />
-        <Product
-          description="Consola Retro Portatil Multiplataformas X7"
-          discount={5}
-          freeShip={true}
-          image=""
-          installments={6}
-          isFullShip={true}
-          offerOfDay={true}
-          prevPrice={9000}
-          priceToBuy={8169}
-        />
-        <Product
-          description="Consola Retro Portatil Multiplataformas X7"
-          discount={5}
-          freeShip={true}
-          image=""
-          installments={6}
-          isFullShip={true}
-          offerOfDay={true}
-          prevPrice={9000}
-          priceToBuy={8169}
-        />
-        <Product
-          description="Consola Retro Portatil Multiplataformas X7"
-          discount={5}
-          freeShip={true}
-          image=""
-          installments={6}
-          isFullShip={true}
-          offerOfDay={true}
-          prevPrice={9000}
-          priceToBuy={8169}
-        />
-        <Product
-          description="Consola Retro Portatil Multiplataformas X7"
-          discount={5}
-          freeShip={true}
-          image=""
-          installments={6}
-          isFullShip={true}
-          offerOfDay={true}
-          prevPrice={9000}
-          priceToBuy={8169}
-        />
+        {products?.map((product) => (
+          <Product
+            key={product.id}
+            basePrice={product.basePrice}
+            image={product.pictures[0].url}
+            installments={0}
+            isFullShip={false}
+            offerOfDay={false}
+            price={product.price}
+            title={product.title}
+          />
+        ))}
       </Stack>
     </>
   );

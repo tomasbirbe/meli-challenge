@@ -3,8 +3,8 @@ import React from "react";
 import { AiFillThunderbolt } from "react-icons/ai";
 
 interface Props {
-  prevPrice?: number;
-  priceToBuy: number;
+  basePrice?: number;
+  price: number;
   discount?: number;
   freeShip?: boolean;
   description: string;
@@ -15,8 +15,8 @@ interface Props {
 }
 
 export default function Category({
-  prevPrice,
-  priceToBuy,
+  basePrice,
+  price,
   discount = 0,
   freeShip = false,
   description,
@@ -55,13 +55,13 @@ export default function Category({
             </Text>
           )}
 
-          {prevPrice && (
+          {basePrice && (
             <Text as="s" color="blackAlpha.500" fontSize="12px">
-              ${prevPrice}
+              ${basePrice}
             </Text>
           )}
           <Stack direction="row">
-            <Text fontSize="20px">${priceToBuy}</Text>
+            <Text fontSize="20px">${price}</Text>
             {discount > 0 && (
               <Text color="green.500" fontSize="14px">
                 {discount}% OFF
