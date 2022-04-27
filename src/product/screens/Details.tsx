@@ -1,20 +1,10 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Divider,
-  Image,
-  Link,
-  Stack,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Text,
-  Th,
-  Thead,
-  Tr,
-} from "@chakra-ui/react";
+import { Box, Button, Image, Link, Stack, Text, Textarea } from "@chakra-ui/react";
+import Description from "src/product/screens/components/Description";
+import Attributes from "src/product/screens/components/Attributes";
+import ProductsCarousel from "src/product/screens/components/OtherProducts";
+import Gallery from "src/product/screens/components/Gallery";
+import Comments from "src/product/screens/components/Comments";
 
 import { Product } from "../types";
 import mock from "../mock";
@@ -24,8 +14,6 @@ interface Props {
 }
 
 const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
-  const [pictureSelected, setPictureSelected] = useState(product.pictures[0].url);
-
   return (
     <>
       <Stack marginBlockEnd={2} paddingBlockStart={7} spacing={5}>
@@ -43,128 +31,76 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
       </Stack>
 
       <Stack bg="white" borderRadius="4px" boxShadow="base" paddingBlockStart={4}>
-        {/* Main content */}
-        <Stack as="main" width="768px">
-          <Stack align="flex-end" spacing={0}>
-            {/* Photos viewer */}
-
-            <Stack direction="row">
-              <Stack paddingInlineStart={4} spacing={2}>
-                {product.pictures.map((picture) => {
-                  return (
-                    <Box
-                      key={picture.id}
-                      border="1px"
-                      borderColor="blackAlpha.300"
-                      borderRadius="4px"
-                      padding={0.5}
-                      width="fit-content"
-                    >
-                      <Image fit="cover" height="44px" src={picture.url} width="44px" />
-                    </Box>
-                  );
-                })}
-              </Stack>
-              <Box paddingBlock={10} paddingInline={4}>
-                <Image fit="cover" height="468px" src={pictureSelected} width="668px" />
-              </Box>
-            </Stack>
-
-            <Stack
-              borderBlock="1px"
-              borderColor="blackAlpha.200"
-              paddingBlock="40px"
-              spacing={5}
-              width="718px"
-            >
-              <Text fontSize="24px" fontWeight={400}>
+        <Stack as="main" justify="flex-end" paddingBlockEnd="25px" spacing={0} width="768px">
+          <Gallery product={product} />
+          <Stack paddingInlineStart="50px">
+            <Stack borderBlock="1px" borderColor="blackAlpha.200" paddingBlock="40px" spacing={5}>
+              <Text as="h2" fontSize="24px" fontWeight={400}>
                 Publicaciones del vendedor
               </Text>
-
-              <Stack position="relative">
-                <Stack direction="row" overflow="auto" paddingInline={2} width="full">
-                  <Button left="-15px" position="absolute" top="calc(50% - 20px)">
-                    {"<"}
-                  </Button>
-                  <Stack bg="green" height="346px">
-                    <Box height="224px" width="224px" />
-                    <Text>Precio</Text>
-                    <Text>Descripcion</Text>
-                  </Stack>
-                  <Stack bg="green" height="346px">
-                    <Box height="224px" width="224px" />
-                    <Text>Precio</Text>
-                    <Text>Descripcion</Text>
-                  </Stack>
-                  <Stack bg="green" height="346px">
-                    <Box height="224px" width="224px" />
-                    <Text>Precio</Text>
-                    <Text>Descripcion</Text>
-                  </Stack>
-                  <Stack bg="green" height="346px">
-                    <Box height="224px" width="224px" />
-                    <Text>Precio</Text>
-                    <Text>Descripcion</Text>
-                  </Stack>
-                  <Stack bg="green" height="346px">
-                    <Box height="224px" width="224px" />
-                    <Text>Precio</Text>
-                    <Text>Descripcion</Text>
-                  </Stack>
-                  <Button position="absolute" right="-30px" top="calc(50% - 20px)">
-                    {">"}
-                  </Button>
-                </Stack>
-              </Stack>
-
+              <ProductsCarousel />
               <Link color="blue.600" fontSize={14}>
                 Ver más publicaciones del vendedor
               </Link>
             </Stack>
-
             <Stack
               borderBlockEnd="1px"
               borderColor="blackAlpha.200"
               paddingBlock="40px"
               spacing={5}
-              width="718px"
             >
-              <Text fontSize="24px" fontWeight={400}>
-                Caracteristicas principales
+              <Attributes product={product} />
+            </Stack>
+            <Stack paddingBlockStart="40px">
+              <Description />
+            </Stack>
+            <Stack spacing={6}>
+              <Comments />
+              <Text color="blue.500" fontSize="14px">
+                Ver todas las preguntas
               </Text>
-              <TableContainer>
-                <Table>
-                  <Tbody>
-                    <Tr>
-                      <Th>Hola</Th>
-                      <Td>Hola</Td>
-                    </Tr>
-                    <Tr>
-                      <Th>Hola</Th>
-                      <Td>Hola</Td>
-                    </Tr>
-                    <Tr>
-                      <Th>Hola</Th>
-                      <Td>Hola</Td>
-                    </Tr>
-                    <Tr>
-                      <Th>Hola</Th>
-                      <Td>Hola</Td>
-                    </Tr>
-                    <Tr>
-                      <Th>Hola</Th>
-                      <Td>Hola</Td>
-                    </Tr>
-                  </Tbody>
-                </Table>
-              </TableContainer>
-              <Link color="blue.600" fontSize={14}>
-                Ver más publicaciones del vendedor
-              </Link>
             </Stack>
           </Stack>
         </Stack>
         <Stack>Aside</Stack>
+      </Stack>
+
+      <Stack direction="row" justify="flex-end" paddingBlock={4}>
+        <Text fontSize={14}>
+          Publicacion <b>#1114686147</b>
+        </Text>
+        <Text fontSize={14}>|</Text>
+        <Link fontSize={14}>Denunciar</Link>
+      </Stack>
+
+      <Stack spacing={6}>
+        <Text as="h2" fontSize="24px">
+          Productos promocionados
+          <Link fontSize="16px" paddingInlineStart={2}>
+            Anuncia aqui
+          </Link>
+        </Text>
+        <Stack width="full">
+          <ProductsCarousel />
+        </Stack>
+      </Stack>
+
+      <Stack paddingBlock="40px" spacing={6}>
+        <Text as="h2" fontSize="24px">
+          Quienes vieron este producto también compraron
+        </Text>
+        <Stack width="full">
+          <ProductsCarousel />
+        </Stack>
+      </Stack>
+
+      <Stack paddingBlock="40px" spacing={6}>
+        <Text as="h2" fontSize="24px">
+          Quienes compraron este producto también compraron
+        </Text>
+        <Stack width="full">
+          <ProductsCarousel />
+        </Stack>
       </Stack>
     </>
   );

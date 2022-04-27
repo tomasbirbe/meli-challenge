@@ -46,6 +46,17 @@ export default extendTheme({
     heading: "Proxima Nova",
   },
   components: {
+    Text: {
+      variants: {
+        truncateMultiline: {
+          display: "-webkit-box",
+          "-webkit-line-clamp": "2",
+          "-webkit-box-orient": "vertical",
+          textOverflow: "ellipsis",
+          overflow: "hidden",
+        },
+      },
+    },
     Link: {
       variants: {
         unstyled: ({ colorScheme = "blackAlpha" }) => ({

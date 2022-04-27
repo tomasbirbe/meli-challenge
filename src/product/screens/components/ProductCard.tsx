@@ -1,4 +1,4 @@
-import { Stack, Box, Text, Image, Icon } from "@chakra-ui/react";
+import { Stack, Box, Text, Icon, Image } from "@chakra-ui/react";
 import React from "react";
 import { AiFillThunderbolt } from "react-icons/ai";
 
@@ -9,12 +9,12 @@ interface Props {
   freeShip?: boolean;
   description: string;
   image: string;
-  offerOfDay: boolean;
-  isFullShip: boolean;
-  installments: number;
+  offerOfDay?: boolean;
+  isFullShip?: boolean;
+  installments?: number;
 }
 
-export default function Product({
+export default function ProductCard({
   basePrice,
   price,
   discount = 0,
@@ -27,20 +27,33 @@ export default function Product({
 }: Props) {
   return (
     <>
+      {/* <Stack bg="green" height="346px" paddingInline={4} width="226px">
+        <Box height="224px" width="224px" />
+        <Text>Precio</Text>
+        <Text>Descripcion</Text>
+      </Stack> */}
+
       <Stack
+        bg="white"
         border="1px solid"
         borderColor="blackAlpha.50"
-        height="347px"
-        justify="flex-start"
-        paddingInline={4}
-        width="160px"
+        flexShrink={0}
+        height="362px"
+        spacing={0}
+        width="226px"
       >
         <Image
-          height="144px"
+          height="224px"
           src="https://http2.mlstatic.com/D_Q_NP_707872-MLA47429171779_092021-V.webp"
-          width="144px"
+          width="224px"
         />
-        <Stack spacing={0}>
+        <Stack
+          borderBlockStart="1px"
+          borderColor="blackAlpha.200"
+          paddingBlock={4}
+          paddingInline={4}
+          spacing={0}
+        >
           {offerOfDay && (
             <Text
               bg="secondary.500"
@@ -60,7 +73,7 @@ export default function Product({
               ${basePrice}
             </Text>
           )}
-          <Stack direction="row">
+          <Stack align="center" direction="row">
             <Text fontSize="20px">${price}</Text>
             {discount > 0 && (
               <Text color="green.500" fontSize="14px">
@@ -68,9 +81,12 @@ export default function Product({
               </Text>
             )}
           </Stack>
-          <Text color="green.500" fontSize={12}>
-            Hasta {installments} cuotas sin interés
-          </Text>
+          {installments > 0 && (
+            <Text color="green.500" fontSize={12}>
+              Hasta {installments} cuotas sin interés
+            </Text>
+          )}
+
           <Stack align="center" direction="row" spacing={1}>
             {freeShip && (
               <Text color="green.500" fontSize="12px" width="fit-content">
@@ -86,7 +102,7 @@ export default function Product({
               </Box>
             )}
           </Stack>
-          <Text fontSize="14px" wordBreak="break-word">
+          <Text fontSize="14px" variant="truncateMultiline">
             {description}
           </Text>
         </Stack>
