@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Box, Button, Image, Link, Stack, Text, Textarea } from "@chakra-ui/react";
+import { Box, Button, Icon, Image, Link, Stack, Text, Textarea } from "@chakra-ui/react";
 import Description from "src/product/screens/components/Description";
 import Attributes from "src/product/screens/components/Attributes";
 import ProductsCarousel from "src/product/screens/components/OtherProducts";
 import Gallery from "src/product/screens/components/Gallery";
 import Comments from "src/product/screens/components/Comments";
+import { AiOutlineHeart } from "react-icons/ai";
 
 import { Product } from "../types";
 import mock from "../mock";
@@ -30,7 +31,7 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
         </Stack>
       </Stack>
 
-      <Stack bg="white" borderRadius="4px" boxShadow="base" paddingBlockStart={4}>
+      <Stack bg="white" borderRadius="4px" boxShadow="base" direction="row" paddingBlockStart={4}>
         <Stack as="main" justify="flex-end" paddingBlockEnd="25px" spacing={0} width="768px">
           <Gallery product={product} />
           <Stack paddingInlineStart="50px">
@@ -62,7 +63,21 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
             </Stack>
           </Stack>
         </Stack>
-        <Stack>Aside</Stack>
+        <Stack paddingInline={4} width="100%">
+          <Stack border="1px" borderColor="blackAlpha.300" borderRadius="8px" paddingInline={3}>
+            <Text color="blackAlpha.500" fontSize="14px">
+              Nuevo | 121 vendidos
+            </Text>
+            <Stack direction="row">
+              <Text fontSize="24px" fontWeight="600">
+                {product.title}
+              </Text>
+              <Button height="35px" variant="unstyled" width="22px">
+                <Icon as={AiOutlineHeart} boxSize={7} color="blue.500" />
+              </Button>
+            </Stack>
+          </Stack>
+        </Stack>
       </Stack>
 
       <Stack direction="row" justify="flex-end" paddingBlock={4}>
