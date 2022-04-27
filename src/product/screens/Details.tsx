@@ -1,5 +1,20 @@
 import React, { useState } from "react";
-import { Box, Button, Divider, Image, Link, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Divider,
+  Image,
+  Link,
+  Stack,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Text,
+  Th,
+  Thead,
+  Tr,
+} from "@chakra-ui/react";
 
 import { Product } from "../types";
 import mock from "../mock";
@@ -30,7 +45,7 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
       <Stack bg="white" borderRadius="4px" boxShadow="base" paddingBlockStart={4}>
         {/* Main content */}
         <Stack as="main" width="768px">
-          <Stack align="flex-end">
+          <Stack align="flex-end" spacing={0}>
             {/* Photos viewer */}
 
             <Stack direction="row">
@@ -55,10 +70,17 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
               </Box>
             </Stack>
 
-            <Stack paddingBlockStart="40px" width="718px">
+            <Stack
+              borderBlock="1px"
+              borderColor="blackAlpha.200"
+              paddingBlock="40px"
+              spacing={5}
+              width="718px"
+            >
               <Text fontSize="24px" fontWeight={400}>
                 Publicaciones del vendedor
               </Text>
+
               <Stack position="relative">
                 <Stack direction="row" overflow="auto" paddingInline={2} width="full">
                   <Button left="-15px" position="absolute" top="calc(50% - 20px)">
@@ -89,11 +111,56 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
                     <Text>Precio</Text>
                     <Text>Descripcion</Text>
                   </Stack>
-                  <Button position="absolute" right="-15px" top="calc(50% - 20px)">
+                  <Button position="absolute" right="-30px" top="calc(50% - 20px)">
                     {">"}
                   </Button>
                 </Stack>
               </Stack>
+
+              <Link color="blue.600" fontSize={14}>
+                Ver más publicaciones del vendedor
+              </Link>
+            </Stack>
+
+            <Stack
+              borderBlockEnd="1px"
+              borderColor="blackAlpha.200"
+              paddingBlock="40px"
+              spacing={5}
+              width="718px"
+            >
+              <Text fontSize="24px" fontWeight={400}>
+                Caracteristicas principales
+              </Text>
+              <TableContainer>
+                <Table>
+                  <Tbody>
+                    <Tr>
+                      <Th>Hola</Th>
+                      <Td>Hola</Td>
+                    </Tr>
+                    <Tr>
+                      <Th>Hola</Th>
+                      <Td>Hola</Td>
+                    </Tr>
+                    <Tr>
+                      <Th>Hola</Th>
+                      <Td>Hola</Td>
+                    </Tr>
+                    <Tr>
+                      <Th>Hola</Th>
+                      <Td>Hola</Td>
+                    </Tr>
+                    <Tr>
+                      <Th>Hola</Th>
+                      <Td>Hola</Td>
+                    </Tr>
+                  </Tbody>
+                </Table>
+              </TableContainer>
+              <Link color="blue.600" fontSize={14}>
+                Ver más publicaciones del vendedor
+              </Link>
             </Stack>
           </Stack>
         </Stack>
