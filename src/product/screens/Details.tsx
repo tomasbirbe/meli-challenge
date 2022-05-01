@@ -1,14 +1,23 @@
 import React from "react";
-import { Box, Button, Icon, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Icon, Image, Img, Link, Stack, Text } from "@chakra-ui/react";
 import Description from "src/product/screens/components/Description";
 import Attributes from "src/product/screens/components/Attributes";
 import ProductsCarousel from "src/product/screens/components/OtherProducts";
 import Gallery from "src/product/screens/components/Gallery";
 import Comments from "src/product/screens/components/Comments";
-import { BsHeart, BsTruck } from "react-icons/bs";
-import { BiRedo } from "react-icons/bi";
-import { FaStar, FaStarHalf } from "react-icons/fa";
-import { IoIosArrowDown } from "react-icons/io";
+import PucharseInfo from "src/product/screens/components/PucharseInfo";
+import SellerInfo from "src/product/screens/components/SellerInfo";
+import mercadoCreditoLogo from "assets/mercado-credito-logo.svg";
+import visaLogo from "assets/visa-logo.svg";
+import americanExpressLogo from "assets/american-express-logo.svg";
+import naranjaLogo from "assets/naranja-logo.svg";
+import mastercardLogo from "assets/mastercard-logo.svg";
+import visaDebitoLogo from "assets/visa-debito-logo.svg";
+import pagoFacilLogo from "assets/pago-facil-logo.svg";
+import rapipagoLogo from "assets/rapipago-logo.svg";
+import mastercardLogo2 from "assets/mastercard-logo-2.svg";
+import mastercardDebito from "assets/mastercard-debito-logo.svg";
+import cabalLogo from "assets/cabal-logo.svg";
 
 import { Product } from "../types";
 import mock from "../mock";
@@ -66,7 +75,8 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
             </Stack>
           </Stack>
         </Stack>
-        <Stack paddingInlineEnd={4} paddingInlineStart={10} width="100%">
+        <Stack as="aside" paddingInlineEnd={4} paddingInlineStart={10} spacing={4} width="100%">
+          <PucharseInfo product={product} />
           <Stack
             border="1px"
             borderColor="blackAlpha.200"
@@ -75,108 +85,104 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
             paddingInline={4}
             spacing={2}
           >
-            <Stack color="blackAlpha.700" direction="row" fontSize="14px">
-              <Text>Nuevo</Text>
-              <Text>|</Text>
-              <Text> 121 vendidos</Text>
-            </Stack>
-            <Stack direction="row" justify="space-between" spacing={2} width="full">
-              <Text fontSize="22px" fontWeight="600" lineHeight={1.18}>
-                {product.title}
+            <SellerInfo />
+          </Stack>
+          <Stack
+            border="1px"
+            borderColor="blackAlpha.200"
+            borderRadius="8px"
+            paddingBlock={6}
+            paddingInline={0}
+            spacing={2}
+          >
+            <Stack
+              borderBlockEnd="1px"
+              borderBottomColor="blackAlpha.200"
+              fontSize="14px"
+              paddingBlockEnd={8}
+              paddingInline={4}
+              spacing={8}
+            >
+              <Text as="h2" fontSize="18px">
+                Devolución gratis
               </Text>
-              <Button height="fit-content" minWidth="28px" variant="unstyled" width="fit-content">
-                <Icon alignSelf="flex-end" as={BsHeart} boxSize={5} color="blue.500" />
-              </Button>
-            </Stack>
-            <Stack align="center" direction="row" justifySelf="flex-start">
-              <Stack color="blue.500" direction="row" spacing={1}>
-                <Icon as={FaStar} height="14px" width="15px" />
-                <Icon as={FaStar} height="14px" width="15px" />
-                <Icon as={FaStar} height="14px" width="15px" />
-                <Icon as={FaStar} height="14px" width="15px" />
-                <Icon as={FaStarHalf} height="14px" width="15px" />
-              </Stack>
-              <Text color="blackAlpha.600" fontSize="14px">
-                59 opiniones
+              <Text color="blackAlpha.600">
+                Tenés 30 días desde que recibís el producto para devolverlo. ¡No importa el motivo!
               </Text>
+              <Link>Conocer más sobre devoluciones</Link>
             </Stack>
-            <Stack direction="row">
-              <Text
-                bg="orange.500"
-                borderRadius="3px"
-                color="white"
-                fontSize="12px"
-                fontWeight="600"
-                paddingInline={1}
-              >
-                MAS VENDIDO
+
+            <Stack
+              borderBlockEnd="1px"
+              borderBottomColor="blackAlpha.200"
+              fontSize="14px"
+              paddingBlock={6}
+              paddingInline={4}
+              spacing={6}
+            >
+              <Text as="h2" fontSize="18px">
+                Garantia
               </Text>
-              <Link color="blue.500" fontSize="12px">
-                10° en Peluches
-              </Link>
-            </Stack>
-            <Stack>
-              <Text fontSize="36px" fontWeight={300}>
-                $ {product.price}
-              </Text>
-              <Text fontSize="18px">
-                En 12x de $211
-                <Text bottom="4.5px" display="inline" fontSize="10px" position="relative">
-                  50&nbsp;
+              <Stack spacing={1}>
+                <Text fontSize="16px">Compra Protegida con Mercado Pago</Text>
+                <Text color="blackAlpha.600">
+                  Recibí el producto que esperabas o te devolvemos tu dinero
                 </Text>
-                pagando con Mercado Credito
+              </Stack>
+              <Stack spacing={1}>
+                <Text fontSize="16px">Garantía del vendedor</Text>
+                <Text color="blackAlpha.600">Sin garantía</Text>
+              </Stack>
+              <Box paddingBlockStart={4}>
+                <Link>Conocer más sobre garantia</Link>
+              </Box>
+            </Stack>
+
+            <Stack
+              fontSize="14px"
+              paddingBlockEnd={2}
+              paddingBlockStart={6}
+              paddingInline={4}
+              spacing={6}
+            >
+              <Text as="h2" fontSize="18px">
+                Medios de pago
               </Text>
-              <Link fontSize="14px">Ver los medios de pago</Link>
-              <Stack direction="row" spacing={3}>
-                <Icon as={BsTruck} boxSize={6} color="green.400" />
-                <Stack fontSize="14px" spacing={0}>
-                  <Text color="green.400" fontSize="16px">
-                    Llega gratis <b>hoy Sabado</b>
-                  </Text>
-                  <Text>
-                    Solo en CABA y zonas de GBA Comprando dentro de las próximas 5 h 39 min
-                  </Text>
-                  <Link>Ver mas formas de entrega</Link>
+              <Stack spacing={1}>
+                <Text fontSize="16px">Hasta 12 cuotas sin tarjeta</Text>
+                <Stack>
+                  <Image height="32px" src={mercadoCreditoLogo} width="73px" />
                 </Stack>
               </Stack>
-              <Stack direction="row">
-                <Icon as={BiRedo} boxSize={7} color="green.400" transform="rotate(0.5turn)" />
-                <Stack fontSize="14px" spacing={0}>
-                  <Text color="green.400" fontSize="16px">
-                    Devolucion gratis
-                  </Text>
-                  <Text>Tenés 30 días desde que lo recibís </Text>
-                  <Link>Conocer mas</Link>
+              <Stack spacing={1}>
+                <Text fontSize="16px">Tarjetas de crédito</Text>
+                <Text color="blackAlpha.600">¡Cuotas sin interés con bancos seleccionados!</Text>
+                <Stack direction="row" paddingBlockStart={3} spacing={6}>
+                  <Image height="32px" src={visaLogo} width="42px" />
+                  <Image height="32px" src={americanExpressLogo} width="32px" />
+                  <Image height="32px" src={naranjaLogo} width="63px" />
+                  <Image height="32px" src={mastercardLogo} width="31px" />
                 </Stack>
               </Stack>
-              <Stack paddingBlockStart={6} spacing={6}>
-                <Text fontWeight={600}>Stock disponible</Text>
-                <Button
-                  alignItems="center"
-                  display="flex"
-                  sx={{ gap: "3px" }}
-                  variant="unstyled"
-                  width="fit-content"
-                >
-                  <Text>
-                    Cantidad: <b>1 Unidad</b>
-                  </Text>
-                  <Box height="17px" minWidth="9px" variant="unstyled">
-                    <Icon as={IoIosArrowDown} color="blue.500" marginBlockEnd={2} />
-                  </Box>
-                  <Text color="blackAlpha.500" fontSize="14px">
-                    (8 disponibles)
-                  </Text>
-                </Button>
+              <Stack spacing={1}>
+                <Text fontSize="16px">Tarjetas de debito</Text>
+                <Stack direction="row" flexWrap="wrap" paddingBlockStart={3} spacing={6}>
+                  <Image height="32px" src={visaDebitoLogo} width="71px" />
+                  <Image height="32px" src={mastercardLogo2} width="32px" />
+                  <Image height="32px" src={mastercardDebito} width="61px" />
+                  <Image height="32px" src={cabalLogo} width="59px" />
+                </Stack>
               </Stack>
-              <Stack>
-                <Button bg="blue.500" color="white" paddingBlock={6}>
-                  Comprar ahora
-                </Button>
-                <Button bg="blue.50" color="blue.500" paddingBlock={6}>
-                  Agregar al carrito
-                </Button>
+              <Stack spacing={1}>
+                <Text fontSize="16px">Efectivo</Text>
+                <Stack direction="row" flexWrap="wrap" paddingBlockStart={3} spacing={6}>
+                  <Image height="32px" src={pagoFacilLogo} width="32px" />
+                  <Image height="32px" src={rapipagoLogo} width="67px" />
+                </Stack>
               </Stack>
+              <Box paddingBlockStart={4}>
+                <Link>Conoce otros medios de pago</Link>
+              </Box>
             </Stack>
           </Stack>
         </Stack>
