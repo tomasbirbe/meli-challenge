@@ -13,8 +13,8 @@ const App: React.FC = () => {
         <Box maxWidth="1184px" width="full">
           <Routes />
         </Box>
+        <Footer />
       </Stack>
-      <Footer />
     </Container>
   );
 };

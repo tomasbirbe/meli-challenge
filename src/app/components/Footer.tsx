@@ -4,7 +4,7 @@ import { RiArrowUpSLine } from "react-icons/ri";
 
 export default function Footer() {
   return (
-    <Stack align="center" spacing={0}>
+    <Stack align="center" spacing={0} width="full">
       <Button
         bg="white"
         borderBottomRadius="0"

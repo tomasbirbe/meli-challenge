@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Link, Stack, Text } from "@chakra-ui/react";
 import Description from "src/product/screens/components/Description";
 import Attributes from "src/product/screens/components/Attributes";
 import ProductsCarousel from "src/product/screens/components/OtherProducts";
@@ -42,6 +42,7 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
         direction="row"
         paddingBlockEnd="60px"
         paddingBlockStart={4}
+        spacing={0}
       >
         <Stack as="main" spacing={0} width="768px">
           <Gallery product={product} />
@@ -74,41 +75,51 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
             </Stack>
           </Stack>
         </Stack>
-        <Stack as="aside" paddingInlineEnd={4} paddingInlineStart={10} spacing={4} width="100%">
-          <PucharseInfo product={product} />
+        <Box position="relative">
           <Stack
-            border="1px"
-            borderColor="blackAlpha.200"
-            borderRadius="8px"
-            paddingBlock={6}
-            paddingInline={4}
-            spacing={2}
+            as="aside"
+            bg="red"
+            paddingInlineEnd={4}
+            paddingInlineStart={10}
+            position="sticky"
+            spacing={4}
+            top="0px"
           >
-            <SellerInfo />
-          </Stack>
-          <Stack
-            border="1px"
-            borderColor="blackAlpha.200"
-            borderRadius="8px"
-            paddingBlock={6}
-            paddingInline={0}
-            spacing={2}
-          >
-            <RefundInfo />
-          </Stack>
-          <Stack
-            border="1px"
-            borderColor="blackAlpha.200"
-            borderRadius="8px"
-            paddingBlock={6}
-            paddingInline={0}
-            spacing={2}
-          >
-            <PromotedProducts />
-          </Stack>
+            <PucharseInfo product={product} />
+            <Stack
+              border="1px"
+              borderColor="blackAlpha.200"
+              borderRadius="8px"
+              paddingBlock={6}
+              paddingInline={4}
+              spacing={2}
+            >
+              <SellerInfo />
+            </Stack>
+            <Stack
+              border="1px"
+              borderColor="blackAlpha.200"
+              borderRadius="8px"
+              paddingBlock={6}
+              paddingInline={0}
+              spacing={2}
+            >
+              <RefundInfo />
+            </Stack>
+            <Stack
+              border="1px"
+              borderColor="blackAlpha.200"
+              borderRadius="8px"
+              paddingBlock={6}
+              paddingInline={0}
+              spacing={2}
+            >
+              <PromotedProducts />
+            </Stack>
 
-          <MercadoShop />
-        </Stack>
+            <MercadoShop />
+          </Stack>
+        </Box>
       </Stack>
 
       <Stack direction="row" justify="flex-end" paddingBlock={4}>

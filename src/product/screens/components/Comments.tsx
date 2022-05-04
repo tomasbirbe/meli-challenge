@@ -82,6 +82,258 @@ export default function Comments() {
           </Text>
         </Stack>
       </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
+      <Stack>
+        <Text>Buenas como se llama el local?</Text>
+        <Stack direction="row" paddingInlineStart={4}>
+          <Text color="blackAlpha.400">L</Text>
+          <Text color="blackAlpha.600" paddingBlockStart={1}>
+            Hola si tenemos stock, somos multiventas az
+            <Text
+              color="blackAlpha.500"
+              display="inline"
+              fontSize="14px"
+              marginInlineStart={2}
+              width="fit-content"
+            >
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Text>
+        </Stack>
+      </Stack>
     </>
   );
 }
