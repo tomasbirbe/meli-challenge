@@ -27,12 +27,6 @@ export default function ProductCard({
 }: Props) {
   return (
     <>
-      {/* <Stack bg="green" height="346px" paddingInline={4} width="226px">
-        <Box height="224px" width="224px" />
-        <Text>Precio</Text>
-        <Text>Descripcion</Text>
-      </Stack> */}
-
       <Stack
         bg="white"
         border="1px solid"

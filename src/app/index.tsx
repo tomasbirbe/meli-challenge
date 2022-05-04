@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Stack, Box } from "@chakra-ui/react";
 import Nav from "src/app/components/UI/Nav";
+import Footer from "src/app/components/Footer";
 
 import Routes from "./routes";
 
@@ -13,6 +14,7 @@ const App: React.FC = () => {
           <Routes />
         </Box>
       </Stack>
+      <Footer />
     </Container>
   );
 };
