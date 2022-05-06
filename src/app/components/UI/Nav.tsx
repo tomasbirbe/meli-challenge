@@ -1,48 +1,42 @@
-import { Stack, SimpleGrid, Icon, Input, Button, Image, Text } from "@chakra-ui/react";
+import { Stack, SimpleGrid, Icon, Input, Button, Image, Text, Link } from "@chakra-ui/react";
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BiMap } from "react-icons/bi";
 import { BsSearch, BsCart2 } from "react-icons/bs";
 import { IoIosArrowForward } from "react-icons/io";
-import logoSmall from "assets/logo-small.png";
+import logo from "assets/logo.png";
+import mlPromo from "assets/ml-promo.webp";
 
 export default function Nav() {
   return (
     <Stack
+      align="center"
       as="nav"
       bg="primary.500"
-      justify="center"
       paddingBlockEnd={2}
-      paddingBlockStart={1}
+      paddingBlockStart={2}
       width="full"
     >
       <Stack
         align="center"
-        borderBlockEnd="1px solid"
-        borderColor="blackAlpha.200"
         direction="row"
-        justify="center"
+        maxWidth="1200px"
         paddingBlockEnd={1}
-        paddingInlineStart={2}
-        spacing={1}
+        spacing={14}
+        width="full"
       >
-        <Image fit="cover" height="32px" marginInlineEnd={2} src={logoSmall} width="44px" />
+        <Image fit="cover" height="34px" src={logo} width="134px" />
         <Stack
           align="center"
           bg="white"
           boxShadow="base"
           direction="row"
-          height="32px"
+          height="39px"
           p={0}
           paddingInlineStart={2}
           spacing={0}
-          width="full"
+          width="598px"
         >
-          <label htmlFor="searchbar">
-            <SimpleGrid placeItems="center" width="20px">
-              <Icon as={BsSearch} color="blackAlpha.500" h="18px" w="13px" />
-            </SimpleGrid>
-          </label>
           <Input
             _active={{}}
             _focus={{}}
@@ -55,14 +49,22 @@ export default function Nav() {
             paddingInline={2}
             placeholder="Buscar productos, marcas y mas..."
           />
+          <label htmlFor="searchbar">
+            <SimpleGrid
+              borderLeft="1px"
+              borderLeftColor="blackAlpha.300"
+              height="25px"
+              placeItems="center"
+              width="46px"
+            >
+              <Icon as={BsSearch} color="blackAlpha.600" h="21px" marginBlockStart={-1} w="16px" />
+            </SimpleGrid>
+          </label>
         </Stack>
         <Stack direction="row" p={0} spacing={0}>
-          <Button minHeight="35px" minWidth="45px" variant="unstyled">
-            <Icon as={AiOutlineMenu} h="25px" w="25px" />
-          </Button>
-          <Button minHeight="35px" minWidth="45px" variant="unstyled">
-            <Icon as={BsCart2} h="35px" w="25px" />
-          </Button>
+          <Link href="#" width="340px">
+            <Image fit="cover" height="39px" src={mlPromo} width="340px" />
+          </Link>
         </Stack>
       </Stack>
 
