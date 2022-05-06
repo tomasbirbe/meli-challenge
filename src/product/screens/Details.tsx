@@ -78,12 +78,11 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
         <Box position="relative">
           <Stack
             as="aside"
-            bg="red"
             paddingInlineEnd={4}
             paddingInlineStart={10}
             position="sticky"
             spacing={4}
-            top="0px"
+            top="15px"
           >
             <PucharseInfo product={product} />
             <Stack
