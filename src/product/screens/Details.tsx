@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Link, Stack, Text } from "@chakra-ui/react";
 import Description from "src/product/screens/components/Description";
 import Attributes from "src/product/screens/components/Attributes";
-import ProductsCarousel from "src/product/screens/components/OtherProducts";
+import ProductsCarousel from "src/product/screens/components/ProductsCarousel";
 import Gallery from "src/product/screens/components/Gallery";
 import Comments from "src/product/screens/components/Comments";
 import PucharseInfo from "src/product/screens/components/PucharseInfo";
@@ -21,17 +21,26 @@ interface Props {
 const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
   return (
     <>
-      <Stack marginBlockEnd={2} paddingBlockStart={7} spacing={5}>
+      <Stack marginBlockEnd={2} paddingBlockStart={5} spacing={5}>
         <Text fontSize="14px">
           <b>También puede interesarte:</b> peluches gigantes - encanto disney - peluche - unicornio
         </Text>
-        <Stack direction="row" spacing={3}>
-          <Text fontSize="14px">Volver al listado</Text>
-          <Text color="blackAlpha.500"> | </Text>
-          <Text fontSize="14px">
-            <Link>Juegos y juguetes</Link> {">"} <Link>Peluches</Link> {">"}
-            <Link>Stitch</Link>
-          </Text>
+        <Stack direction="row" justify="space-between">
+          <Stack direction="row" spacing={3}>
+            <Text fontSize="14px">Volver al listado</Text>
+            <Text color="blackAlpha.500"> | </Text>
+            <Text fontSize="14px">
+              <Link>Juegos y juguetes</Link> {">"} <Link>Peluches</Link> {">"}
+              <Link>Stitch</Link>
+            </Text>
+          </Stack>
+          <Stack align="center" direction="row" fontSize="14px" spacing={3}>
+            <Link>Compartir</Link>
+            <Text color="blackAlpha.400" fontSize="16px">
+              |
+            </Text>
+            <Link>Vender uno igual</Link>
+          </Stack>
         </Stack>
       </Stack>
 
@@ -51,7 +60,59 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
               <Text as="h2" fontSize="24px" fontWeight={400}>
                 Publicaciones del vendedor
               </Text>
-              <ProductsCarousel />
+              <ProductsCarousel
+                products={[
+                  {
+                    description:
+                      "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
+                    img:
+                      "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
+                    price: 1500,
+                  },
+                  {
+                    description:
+                      "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
+                    img:
+                      "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
+                    price: 1500,
+                  },
+                  {
+                    description:
+                      "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
+                    img:
+                      "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
+                    price: 1500,
+                  },
+                  {
+                    description:
+                      "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
+                    img:
+                      "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
+                    price: 1500,
+                  },
+                  {
+                    description:
+                      "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
+                    img:
+                      "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
+                    price: 1500,
+                  },
+                  {
+                    description:
+                      "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
+                    img:
+                      "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
+                    price: 1500,
+                  },
+                  {
+                    description:
+                      "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
+                    img:
+                      "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
+                    price: 1500,
+                  },
+                ]}
+              />
               <Link color="blue.600" fontSize={14}>
                 Ver más publicaciones del vendedor
               </Link>
@@ -75,11 +136,10 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
             </Stack>
           </Stack>
         </Stack>
-        <Box position="relative">
+        <Box as="aside" position="relative">
           <Stack
-            as="aside"
             paddingInlineEnd={4}
-            paddingInlineStart={10}
+            paddingInlineStart={12}
             position="sticky"
             spacing={4}
             top="15px"
@@ -137,7 +197,17 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
           </Link>
         </Text>
         <Stack width="full">
-          <ProductsCarousel />
+          <ProductsCarousel
+            products={[
+              {
+                description:
+                  "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
+                img:
+                  "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
+                price: 1500,
+              },
+            ]}
+          />
         </Stack>
       </Stack>
 
@@ -146,7 +216,17 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
           Quienes vieron este producto también compraron
         </Text>
         <Stack width="full">
-          <ProductsCarousel />
+          <ProductsCarousel
+            products={[
+              {
+                description:
+                  "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
+                img:
+                  "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
+                price: 1500,
+              },
+            ]}
+          />
         </Stack>
       </Stack>
 
@@ -155,7 +235,17 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
           Quienes compraron este producto también compraron
         </Text>
         <Stack width="full">
-          <ProductsCarousel />
+          <ProductsCarousel
+            products={[
+              {
+                description:
+                  "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
+                img:
+                  "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
+                price: 1500,
+              },
+            ]}
+          />
         </Stack>
       </Stack>
     </>
