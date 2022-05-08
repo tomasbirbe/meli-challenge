@@ -1,4 +1,4 @@
-import { Stack, Textarea, Button, Text } from "@chakra-ui/react";
+import { Stack, Textarea, Button, Text, Link } from "@chakra-ui/react";
 import React from "react";
 
 export default function Comments() {
@@ -11,53 +11,83 @@ export default function Comments() {
         ¿Que queres saber?
       </Text>
       <Stack color="blue.500" direction="row" spacing={4}>
-        <Text
-          bg="blue.100"
+        <Button
+          _active={{ bg: "blue.200" }}
+          _focus={{}}
+          _hover={{ bg: "blue.100" }}
+          bg="blue.50"
           borderRadius="5px"
           fontSize="14px"
           fontWeight="bold"
+          height="32px"
           paddingBlock={2}
           paddingInline={3}
         >
           Costo y tiempo de envio
-        </Text>
-        <Text
-          bg="blue.100"
+        </Button>
+        <Button
+          _active={{ bg: "blue.200" }}
+          _focus={{}}
+          _hover={{ bg: "blue.100" }}
+          bg="blue.50"
           borderRadius="5px"
           fontSize="14px"
           fontWeight="bold"
+          height="32px"
           paddingBlock={2}
           paddingInline={3}
         >
           Devoluciones gratis
-        </Text>
-        <Text
-          bg="blue.100"
+        </Button>
+        <Button
+          _active={{ bg: "blue.200" }}
+          _focus={{}}
+          _hover={{ bg: "blue.100" }}
+          bg="blue.50"
           borderRadius="5px"
           fontSize="14px"
           fontWeight="bold"
+          height="32px"
           paddingBlock={2}
           paddingInline={3}
         >
           Medios de pago y promociones
-        </Text>
-        <Text
-          bg="blue.100"
+        </Button>
+        <Button
+          _active={{ bg: "blue.200" }}
+          _focus={{}}
+          _hover={{ bg: "blue.100" }}
+          bg="blue.50"
           borderRadius="5px"
           fontSize="14px"
           fontWeight="bold"
+          height="32px"
           paddingBlock={2}
           paddingInline={3}
         >
           Garantia
-        </Text>
+        </Button>
       </Stack>
       <Text fontSize="18px" fontWeight="bold" paddingBlockStart="20px">
         Preguntale al vendedor
       </Text>
       <Stack direction="row">
-        <Textarea minHeight="48px" paddingBlockStart="12px" resize="none" />
-        <Button bg="blue.500" color="white" height="48px" paddingInline={10}>
+        <Textarea
+          borderColor="gray.400"
+          minHeight="48px"
+          paddingBlockStart="12px"
+          placeholder="Escribi tu respuesta"
+          resize="none"
+        />
+        <Button
+          _active={{ bg: "#1f4e96" }}
+          _focus={{}}
+          _hover={{ bg: "#2968c8" }}
+          bg="#3483fa"
+          color="white"
+          height="48px"
+          paddingInline={12}
+        >
           Preguntar
         </Button>
       </Stack>
@@ -65,7 +95,10 @@ export default function Comments() {
         Ultimas realizadas
       </Text>
       <Stack>
-        <Text>Buenas como se llama el local?</Text>
+        <Stack align="flex-end" direction="row">
+          <Text>Buenas como se llama el local?</Text>
+          <Link fontSize="14px">Denunciar</Link>
+        </Stack>
         <Stack direction="row" paddingInlineStart={4}>
           <Text color="blackAlpha.400">L</Text>
           <Text color="blackAlpha.600" paddingBlockStart={1}>

@@ -21,14 +21,14 @@ export default function Gallery({ product }: { product: Product }) {
                 width="fit-content"
                 onMouseOver={() => setPictureSelected(picture)}
               >
-                <Image fit="cover" height="44px" src={picture.url} width="44px" />
+                <Image fit="contain" height="44px" src={picture.url} width="44px" />
               </Box>
             );
           })}
         </Stack>
-        <Box paddingBlock={10} paddingInline={4}>
-          <Image fit="cover" height="468px" src={pictureSelected.url} width="668px" />
-        </Box>
+        <Stack height="468px" paddingBlock={10} paddingInline={4} width="668px">
+          <Image fit="contain" height="full" objectPosition="center" src={pictureSelected.url} />
+        </Stack>
       </Stack>
     </>
   );
