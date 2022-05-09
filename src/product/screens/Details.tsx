@@ -5,11 +5,11 @@ import Attributes from "src/product/screens/components/Attributes";
 import ProductsCarousel from "src/product/screens/components/ProductsCarousel";
 import Gallery from "src/product/screens/components/Gallery";
 import Comments from "src/product/screens/components/Comments";
-import PucharseInfo from "src/product/screens/components/PucharseInfo";
-import SellerInfo from "src/product/screens/components/SellerInfo";
-import RefundInfo from "src/product/screens/components/RefundInfo";
-import PromotedProducts from "src/product/screens/components/PromotedProducts";
-import MercadoShop from "src/product/screens/components/MercadoShop";
+import PucharseInfo from "src/";
+import SellerInfo from "src/";
+import RefundInfo from "src/";
+import PromotedProducts from "src/";
+import MercadoShop from "src/";
 
 import { Product } from "../types";
 import mock from "../mock";
@@ -147,7 +147,7 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
             <PucharseInfo product={product} />
             <Stack
               border="1px"
-              borderColor="blackAlpha.200"
+              borderColor="blackAlpha.300"
               borderRadius="8px"
               paddingBlock={6}
               paddingInline={4}
@@ -157,7 +157,7 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
             </Stack>
             <Stack
               border="1px"
-              borderColor="blackAlpha.200"
+              borderColor="blackAlpha.300"
               borderRadius="8px"
               paddingBlock={6}
               paddingInline={0}
@@ -167,9 +167,10 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
             </Stack>
             <Stack
               border="1px"
-              borderColor="blackAlpha.200"
+              borderColor="blackAlpha.300"
               borderRadius="8px"
-              paddingBlock={6}
+              paddingBlockEnd={10}
+              paddingBlockStart={6}
               paddingInline={0}
               spacing={2}
             >
@@ -187,66 +188,6 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
         </Text>
         <Text fontSize={14}>|</Text>
         <Link fontSize={14}>Denunciar</Link>
-      </Stack>
-
-      <Stack spacing={6}>
-        <Text as="h2" fontSize="24px">
-          Productos promocionados
-          <Link fontSize="16px" paddingInlineStart={2}>
-            Anuncia aqui
-          </Link>
-        </Text>
-        <Stack width="full">
-          <ProductsCarousel
-            products={[
-              {
-                description:
-                  "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
-                img:
-                  "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
-                price: 1500,
-              },
-            ]}
-          />
-        </Stack>
-      </Stack>
-
-      <Stack paddingBlock="40px" spacing={6}>
-        <Text as="h2" fontSize="24px">
-          Quienes vieron este producto también compraron
-        </Text>
-        <Stack width="full">
-          <ProductsCarousel
-            products={[
-              {
-                description:
-                  "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
-                img:
-                  "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
-                price: 1500,
-              },
-            ]}
-          />
-        </Stack>
-      </Stack>
-
-      <Stack paddingBlock="40px" spacing={6}>
-        <Text as="h2" fontSize="24px">
-          Quienes compraron este producto también compraron
-        </Text>
-        <Stack width="full">
-          <ProductsCarousel
-            products={[
-              {
-                description:
-                  "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
-                img:
-                  "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
-                price: 1500,
-              },
-            ]}
-          />
-        </Stack>
       </Stack>
     </>
   );

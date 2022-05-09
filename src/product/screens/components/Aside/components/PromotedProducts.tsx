@@ -29,8 +29,7 @@ export default function PromotedProducts() {
                 Envio gratis
               </Text>
               <Text fontSize="14px" paddingBlockStart={1} variant="truncateMultiline">
-                Peluche Stitch 20 Cm importado Elegi tu
-                modelosdfgsdfgsdfgsdgsdfsdgfsdfgsdfgsdfgsdfsdf
+                Peluche Stitch 20 Cm importado Elegi tu modelo
               </Text>
             </Box>
           </Stack>

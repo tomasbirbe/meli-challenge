@@ -26,9 +26,9 @@ export default function ProductCard({
   offerOfDay = false,
 }: Props) {
   return (
-    <Box height="362px" paddingBlockEnd={2} width="240px">
+    <Box paddingBlockEnd={5} width="240px">
       <Stack
-        _hover={{ boxShadow: "xl" }}
+        _hover={{ boxShadow: "0 7px 11px 0 rgb(0 0 0 / 10%), 0 2px 4px 0 rgb(0 0 0 / 10%)" }}
         as="a"
         bg="white"
         border="1px solid"

@@ -12,7 +12,7 @@ export default function PucharseInfo({ product }: { product: Product }) {
     <>
       <Stack
         border="1px"
-        borderColor="blackAlpha.200"
+        borderColor="blackAlpha.300"
         borderRadius="8px"
         paddingBlock={6}
         paddingInline={4}

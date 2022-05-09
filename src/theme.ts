@@ -8,6 +8,13 @@ export default extendTheme({
       "input::placeholder": {
         color: "blackAlpha.300",
       },
+      ".comment > a ": {
+        opacity: "0",
+        transition: "none",
+      },
+      ".comment:hover > a": {
+        opacity: "1",
+      },
     },
   },
   shadows: {
