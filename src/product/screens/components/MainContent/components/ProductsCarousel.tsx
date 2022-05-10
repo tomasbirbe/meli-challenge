@@ -4,7 +4,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIos } from "react-icons/md";
 import type { Product } from "src/product/types";
 
-import ProductCard from "./ProductCard";
+import ProductCard from "../../ProductCard";
 
 export default function ProductsCarousel({ products }: { products: any[] }) {
   const [scrollPosition, setScrollPosition] = useState<number>(0);

@@ -1,7 +1,8 @@
 import { TableContainer, Table, Tbody, Tr, Th, Td, Stack, Text } from "@chakra-ui/react";
 import React from "react";
+import type { Product } from "src/product/types";
 
-export default function Attributes({ product }) {
+export default function Attributes({ product }: { product: Product }) {
   return (
     <>
       <Text as="h2" fontSize="24px" fontWeight={400}>

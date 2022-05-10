@@ -1,11 +1,11 @@
 import { Stack, Textarea, Button, Text, Link } from "@chakra-ui/react";
-import React, { useReducer } from "react";
+import React, { FormEvent, useReducer } from "react";
 
 enum actions {
   ADD_COMMENT,
 }
 
-const commentsReducer = (state, action) => {
+const commentsReducer = (state: any, action: { type: actions; payload: any }) => {
   switch (action.type) {
     case actions.ADD_COMMENT: {
       const updatedComments = [...state, action.payload];
@@ -39,7 +39,7 @@ export default function Comments() {
     },
   ]);
 
-  function addComment(event) {
+  function addComment(event: any) {
     event.preventDefault();
 
     const commentContent = event.target[0].value;
@@ -129,6 +129,7 @@ export default function Comments() {
         <Textarea
           borderColor="gray.400"
           minHeight="48px"
+          name="comment"
           paddingBlockStart="12px"
           placeholder="Escribi tu respuesta"
           resize="none"
