@@ -28,7 +28,7 @@ export function Aside({ product }: { product: Product }) {
             paddingInline={4}
             spacing={2}
           >
-            <SellerInfo />
+            <SellerInfo product={product} />
           </Stack>
           <Stack
             border="1px"

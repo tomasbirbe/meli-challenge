@@ -1,5 +1,5 @@
 import { Stack, Button, Icon, Box, Text, Link } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineTrophy } from "react-icons/ai";
 import { BiRedo, BiCheckShield } from "react-icons/bi";
 import { BsHeart, BsTruck } from "react-icons/bs";
@@ -8,6 +8,36 @@ import { IoIosArrowDown } from "react-icons/io";
 import { Product } from "src/product/types";
 
 export default function PucharseInfo({ product }: { product: Product }) {
+  const [selectIsOpen, setSelectIsOpen] = useState(false);
+  const [stockAvailable, setStockAvailable] = useState<number[]>([]);
+  const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
+  const selectBox = useRef(null);
+
+  useEffect(() => {
+    let stock = [];
+
+    for (let i = 0; i < product.available_quantity; i++) {
+      stock.push(++i);
+    }
+    setStockAvailable([1, 2, 3, 4, 5]);
+  }, []);
+
+  function selectQuantity(quantity: number) {
+    // setSelectIsOpen(false);
+    setSelectedQuantity(quantity);
+  }
+
+  function openSelect() {
+    setSelectIsOpen(true);
+  }
+
+  function closeSelect(event) {
+    console.log([event.currentTarget, selectBox.current]);
+    if (event.currentTarget !== selectBox.current) {
+    }
+    // setSelectIsOpen(false);
+  }
+
   return (
     <>
       <Stack
@@ -59,16 +89,18 @@ export default function PucharseInfo({ product }: { product: Product }) {
           </Link>
         </Stack>
         <Stack>
-          <Text fontSize="36px" fontWeight={300}>
-            $ {product.price}
-          </Text>
-          <Text fontSize="18px">
-            En 12x de $211
-            <Text bottom="4.5px" display="inline" fontSize="10px" position="relative">
-              50&nbsp;
+          <Stack paddingBlockStart={2} spacing={0}>
+            <Text fontSize="36px" fontWeight={300} lineHeight={1.1}>
+              $ {product.price}
             </Text>
-            pagando con Mercado Credito
-          </Text>
+            <Text fontSize="18px">
+              En 12x de $211
+              <Text bottom="4.5px" display="inline" fontSize="10px" position="relative">
+                50&nbsp;
+              </Text>
+              pagando con Mercado Credito
+            </Text>
+          </Stack>
           <Link fontSize="14px">Ver los medios de pago</Link>
           <Stack direction="row" spacing={3}>
             <Icon as={BsTruck} boxSize={6} color="green.400" />
@@ -92,29 +124,90 @@ export default function PucharseInfo({ product }: { product: Product }) {
           </Stack>
           <Stack paddingBlockStart={6} spacing={6}>
             <Text fontWeight={600}>Stock disponible</Text>
-            <Button
-              alignItems="center"
-              display="flex"
-              sx={{ gap: "3px" }}
-              variant="unstyled"
-              width="fit-content"
-            >
-              <Text>
-                Cantidad: <b>1 Unidad</b>
-              </Text>
-              <Box height="17px" minWidth="9px" variant="unstyled">
-                <Icon as={IoIosArrowDown} color="blue.500" marginBlockEnd={2} />
-              </Box>
-              <Text color="blackAlpha.500" fontSize="14px">
-                (8 disponibles)
-              </Text>
-            </Button>
+            <Box position="relative">
+              <Button
+                _focus={{}}
+                alignItems="center"
+                display="flex"
+                sx={{ gap: "3px" }}
+                variant="unstyled"
+                width="fit-content"
+                onBlur={closeSelect}
+                onClick={openSelect}
+              >
+                <Text>
+                  Cantidad: <b>{selectedQuantity} unidad</b>
+                </Text>
+                <Box height="17px" minWidth="9px" variant="unstyled">
+                  <Icon as={IoIosArrowDown} color="blue.500" marginBlockEnd={2} />
+                </Box>
+                <Text color="blackAlpha.500" fontSize="14px">
+                  ({product.available_quantity} disponibles)
+                </Text>
+              </Button>
+              {selectIsOpen && (
+                <Stack
+                  ref={selectBox}
+                  as="ul"
+                  bg="white"
+                  borderRadius="4px"
+                  boxShadow="2xl"
+                  height="fit-content"
+                  listStyleType="none"
+                  position="absolute"
+                  spacing={0}
+                  zIndex={1}
+                >
+                  {stockAvailable.map((stock) => (
+                    <Box key={stock} as="li" borderRadius="4px">
+                      <Button
+                        _focus={{}}
+                        _hover={{ bg: "gray.200" }}
+                        bg="transparent"
+                        height="fit-content"
+                        paddingBlock={0.5}
+                        paddingInline={0.5}
+                        variant="unstyled"
+                        onClick={() => selectQuantity(stock)}
+                      >
+                        <Box
+                          borderInlineStart="2px solid"
+                          borderInlineStartColor={
+                            selectedQuantity === stock ? "blue.500" : "transparent"
+                          }
+                          color={selectedQuantity === stock ? "blue.500" : "black"}
+                          paddingBlock={4}
+                          paddingInlineEnd={24}
+                          paddingInlineStart={4}
+                        >
+                          <Text fontWeight="light">{stock} unidad</Text>
+                        </Box>
+                      </Button>
+                    </Box>
+                  ))}
+                </Stack>
+              )}
+            </Box>
           </Stack>
           <Stack paddingBlockStart={5}>
-            <Button bg="blue.500" color="white" paddingBlock={6}>
+            <Button
+              _active={{ bg: "#1f4e96" }}
+              _focus={{}}
+              _hover={{ bg: "#2968c8" }}
+              bg="blue.500"
+              color="white"
+              paddingBlock={6}
+            >
               Comprar ahora
             </Button>
-            <Button bg="blue.50" color="blue.500" paddingBlock={6}>
+            <Button
+              _active={{ bg: "#c6dbf7" }}
+              _focus={{}}
+              _hover={{ bg: "#d9e7fa" }}
+              bg="blue.50"
+              color="blue.500"
+              paddingBlock={6}
+            >
               Agregar al carrito
             </Button>
           </Stack>

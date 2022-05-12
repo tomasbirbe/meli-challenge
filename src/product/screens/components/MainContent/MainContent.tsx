@@ -18,59 +18,7 @@ export function MainContent({ product }: { product: Product }) {
             <Text as="h2" fontSize="24px" fontWeight={400}>
               Publicaciones del vendedor
             </Text>
-            <ProductsCarousel
-              products={[
-                {
-                  description:
-                    "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
-                  img:
-                    "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
-                  price: 1500,
-                },
-                {
-                  description:
-                    "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
-                  img:
-                    "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
-                  price: 1500,
-                },
-                {
-                  description:
-                    "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
-                  img:
-                    "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
-                  price: 1500,
-                },
-                {
-                  description:
-                    "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
-                  img:
-                    "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
-                  price: 1500,
-                },
-                {
-                  description:
-                    "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
-                  img:
-                    "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
-                  price: 1500,
-                },
-                {
-                  description:
-                    "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
-                  img:
-                    "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
-                  price: 1500,
-                },
-                {
-                  description:
-                    "Peluche Stitch O Angel 45cm Importado Lilo Y Stitch Hermososadsfasdfasdfasdfasdasdfasdfasdfasdfasdfasdfasdffasdfasdfasdf",
-                  img:
-                    "https://images.ecestaticos.com/FVdcvD11qPRi-JWDH3USTiXDmeQ=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F47b%2F328%2F963%2F47b3289639713b8e80c8d682d219fba7.jpg",
-                  price: 1500,
-                },
-              ]}
-            />
+            <ProductsCarousel products={[]} />
             <Link color="blue.600" fontSize={14}>
               Ver más publicaciones del vendedor
             </Link>

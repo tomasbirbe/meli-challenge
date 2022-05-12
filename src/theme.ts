@@ -57,8 +57,8 @@ export default extendTheme({
       variants: {
         truncateMultiline: {
           display: "-webkit-box",
-          "-webkit-line-clamp": "2",
-          "-webkit-box-orient": "vertical",
+          WebkitLineClamp: "2",
+          WebkitBoxOrient: "vertical",
           textOverflow: "ellipsis",
           overflow: "hidden",
         },
