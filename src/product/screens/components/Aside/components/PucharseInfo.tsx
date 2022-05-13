@@ -2,7 +2,7 @@ import { Stack, Button, Icon, Box, Text, Link } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineTrophy } from "react-icons/ai";
 import { BiRedo, BiCheckShield } from "react-icons/bi";
-import { BsHeart, BsTruck } from "react-icons/bs";
+import { BsHeart, BsHeartFill, BsTruck } from "react-icons/bs";
 import { FaStar, FaStarHalf } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { Product } from "src/product/types";
@@ -11,6 +11,7 @@ export default function PucharseInfo({ product }: { product: Product }) {
   const [selectIsOpen, setSelectIsOpen] = useState(false);
   const [stockAvailable, setStockAvailable] = useState<number[]>([]);
   const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
+  const [isLiked, setIsLiked] = useState(false)
   const selectBox = useRef(null);
 
   useEffect(() => {
@@ -22,8 +23,12 @@ export default function PucharseInfo({ product }: { product: Product }) {
     setStockAvailable([1, 2, 3, 4, 5]);
   }, []);
 
+  function toggleLike() {
+    setIsLiked(!isLiked);
+  }
+
   function selectQuantity(quantity: number) {
-    // setSelectIsOpen(false);
+    setSelectIsOpen(false);
     setSelectedQuantity(quantity);
   }
 
@@ -32,10 +37,10 @@ export default function PucharseInfo({ product }: { product: Product }) {
   }
 
   function closeSelect(event) {
-    console.log([event.currentTarget, selectBox.current]);
-    if (event.currentTarget !== selectBox.current) {
+    // console.log([event.currentTarget, selectBox.current]);
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      setSelectIsOpen(false);
     }
-    // setSelectIsOpen(false);
   }
 
   return (
@@ -57,8 +62,8 @@ export default function PucharseInfo({ product }: { product: Product }) {
           <Text fontSize="22px" fontWeight="600" lineHeight={1.18}>
             {product.title}
           </Text>
-          <Button height="fit-content" minWidth="28px" variant="unstyled" width="fit-content">
-            <Icon alignSelf="flex-end" as={BsHeart} boxSize={5} color="blue.500" />
+          <Button _focus={{}} onClick={toggleLike} height="fit-content" minWidth="28px" variant="unstyled" width="fit-content">
+            <Icon alignSelf="flex-end" as={isLiked ? BsHeartFill : BsHeart } boxSize={5} color="blue.500" />
           </Button>
         </Stack>
         <Stack align="center" direction="row" justifySelf="flex-start">
@@ -124,7 +129,7 @@ export default function PucharseInfo({ product }: { product: Product }) {
           </Stack>
           <Stack paddingBlockStart={6} spacing={6}>
             <Text fontWeight={600}>Stock disponible</Text>
-            <Box position="relative">
+            <Box position="relative" onBlur={closeSelect}>
               <Button
                 _focus={{}}
                 alignItems="center"
@@ -132,7 +137,7 @@ export default function PucharseInfo({ product }: { product: Product }) {
                 sx={{ gap: "3px" }}
                 variant="unstyled"
                 width="fit-content"
-                onBlur={closeSelect}
+                
                 onClick={openSelect}
               >
                 <Text>
