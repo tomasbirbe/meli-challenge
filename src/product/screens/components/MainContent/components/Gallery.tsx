@@ -7,7 +7,7 @@ export default function Gallery({ product }: { product: Product }) {
 
   return (
     <>
-      <Stack direction="row">
+      <Stack direction="row" height="550px">
         <Stack paddingInlineStart={4} spacing={2}>
           {product.pictures.map((picture) => {
             return (
@@ -26,8 +26,14 @@ export default function Gallery({ product }: { product: Product }) {
             );
           })}
         </Stack>
-        <Stack height="468px" paddingBlock={10} paddingInline={4} width="668px">
-          <Image fit="contain" height="full" objectPosition="center" src={pictureSelected.url} />
+        <Stack paddingBlockStart={10}>
+          <Image
+            fit="contain"
+            height="468px"
+            objectPosition="center"
+            src={pictureSelected.url}
+            width="668px"
+          />
         </Stack>
       </Stack>
     </>

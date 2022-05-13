@@ -11,10 +11,15 @@ import Description from "./components/Description";
 export function MainContent({ product }: { product: Product }) {
   return (
     <>
-      <Stack as="main" spacing={0} width="768px">
+      <Stack as="main" minWidth="768px" spacing={0}>
         <Gallery product={product} />
         <Stack paddingInlineStart="50px">
-          <Stack borderBlock="1px" borderColor="blackAlpha.200" paddingBlock="40px" spacing={5}>
+          <Stack
+            borderBlockStart="1px solid"
+            borderBlockStartColor="blackAlpha.200"
+            paddingBlock="40px"
+            spacing={5}
+          >
             <Text as="h2" fontSize="24px" fontWeight={400}>
               Publicaciones del vendedor
             </Text>
