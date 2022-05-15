@@ -1,8 +1,7 @@
-import { Stack, SimpleGrid, Icon, Input, Button, Image, Text, Link, Box } from "@chakra-ui/react";
+import { Stack, SimpleGrid, Icon, Input, Image, Text, Link, Box } from "@chakra-ui/react";
 import React from "react";
-import { BiMap } from "react-icons/bi";
 import { BsCart2, BsSearch } from "react-icons/bs";
-import logo from "assets/logo.png";
+import logo from "assets/tomas-birbe.svg";
 import mlPromo from "assets/ml-promo.webp";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
@@ -19,7 +18,9 @@ export default function Nav() {
           spacing={14}
           width="full"
         >
-          <Image fit="cover" height="34px" src={logo} width="134px" />
+          <Box height="34px" width="134px">
+            <Image fit="contain" height="34px" src={logo} width="134px" />
+          </Box>
           <Stack
             align="center"
             bg="white"
