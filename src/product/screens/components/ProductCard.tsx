@@ -26,17 +26,22 @@ export default function ProductCard({
   offerOfDay = false,
 }: Props) {
   return (
-    <>
+    <Box paddingBlockEnd={5} width="240px">
       <Stack
+        _hover={{ boxShadow: "0 7px 11px 0 rgb(0 0 0 / 10%), 0 2px 4px 0 rgb(0 0 0 / 10%)" }}
+        as="a"
         bg="white"
         border="1px solid"
         borderColor="blackAlpha.50"
+        borderRadius="4px"
+        cursor="pointer"
         flexShrink={0}
-        height="362px"
+        height="full"
         spacing={0}
-        width="226px"
+        width="224px"
       >
         <Image
+          fit="cover"
           height="224px"
           src="https://http2.mlstatic.com/D_Q_NP_707872-MLA47429171779_092021-V.webp"
           width="224px"
@@ -101,6 +106,6 @@ export default function ProductCard({
           </Text>
         </Stack>
       </Stack>
-    </>
+    </Box>
   );
 }

@@ -8,6 +8,13 @@ export default extendTheme({
       "input::placeholder": {
         color: "blackAlpha.300",
       },
+      ".comment > a ": {
+        opacity: "0",
+        transition: "none",
+      },
+      ".comment:hover > a": {
+        opacity: "1",
+      },
     },
   },
   shadows: {
@@ -50,8 +57,8 @@ export default extendTheme({
       variants: {
         truncateMultiline: {
           display: "-webkit-box",
-          "-webkit-line-clamp": "2",
-          "-webkit-box-orient": "vertical",
+          WebkitLineClamp: "2",
+          WebkitBoxOrient: "vertical",
           textOverflow: "ellipsis",
           overflow: "hidden",
         },
