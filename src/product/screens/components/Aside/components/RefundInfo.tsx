@@ -14,7 +14,14 @@ import React from "react";
 
 export default function Refundinfo() {
   return (
-    <>
+    <Stack
+      border="1px"
+      borderColor="blackAlpha.300"
+      borderRadius="8px"
+      paddingBlock={6}
+      paddingInline={0}
+      spacing={2}
+    >
       <Stack
         borderBlockEnd="1px"
         borderBottomColor="blackAlpha.200"
@@ -104,6 +111,6 @@ export default function Refundinfo() {
           <Link>Conoce otros medios de pago</Link>
         </Box>
       </Stack>
-    </>
+    </Stack>
   );
 }

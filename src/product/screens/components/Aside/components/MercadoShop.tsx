@@ -1,5 +1,6 @@
 import { Stack, Link, Box, Grid, GridItem, Text, Image } from "@chakra-ui/react";
 import React from "react";
+import formatPrice from "src/utils/formatPrice";
 import mercadoShopsLogo from "src/assets/mercado-shops-logo.svg";
 
 export default function MercadoShop() {
@@ -44,7 +45,7 @@ export default function MercadoShop() {
                   <Text fontSize="12px" variant="truncateMultiline">
                     Transformer Auto Robot Convertible Bumblebee Muñeco
                   </Text>
-                  <Text fontSize="14px">$ 1500</Text>
+                  <Text fontSize="14px">{formatPrice(1500)}</Text>
                 </Stack>
               </Stack>
             </GridItem>
@@ -72,7 +73,7 @@ export default function MercadoShop() {
                   <Text fontSize="12px" variant="truncateMultiline">
                     Transformer Auto Robot Convertible Bumblebee Muñeco
                   </Text>
-                  <Text fontSize="14px">$ 1500</Text>
+                  <Text fontSize="14px">{formatPrice(1500)}</Text>
                 </Stack>
               </Stack>
             </GridItem>
@@ -100,7 +101,7 @@ export default function MercadoShop() {
                   <Text fontSize="12px" variant="truncateMultiline">
                     Transformer Auto Robot Convertible Bumblebee Muñeco
                   </Text>
-                  <Text fontSize="14px">$ 1500</Text>
+                  <Text fontSize="14px">{formatPrice(1500)}</Text>
                 </Stack>
               </Stack>
             </GridItem>

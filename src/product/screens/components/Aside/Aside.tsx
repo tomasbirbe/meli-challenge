@@ -20,38 +20,9 @@ export function Aside({ product }: { product: Product }) {
           top="15px"
         >
           <PucharseInfo product={product} />
-          <Stack
-            border="1px"
-            borderColor="blackAlpha.300"
-            borderRadius="8px"
-            paddingBlock={6}
-            paddingInline={4}
-            spacing={2}
-          >
-            <SellerInfo product={product} />
-          </Stack>
-          <Stack
-            border="1px"
-            borderColor="blackAlpha.300"
-            borderRadius="8px"
-            paddingBlock={6}
-            paddingInline={0}
-            spacing={2}
-          >
-            <RefundInfo />
-          </Stack>
-          <Stack
-            border="1px"
-            borderColor="blackAlpha.300"
-            borderRadius="8px"
-            paddingBlockEnd={10}
-            paddingBlockStart={6}
-            paddingInline={0}
-            spacing={2}
-          >
-            <PromotedProducts />
-          </Stack>
-
+          <SellerInfo product={product} />
+          <RefundInfo />
+          <PromotedProducts />
           <MercadoShop />
         </Stack>
       </Box>

@@ -1,5 +1,5 @@
 import { Stack, Textarea, Button, Text, Link } from "@chakra-ui/react";
-import React, { FormEvent, useReducer } from "react";
+import React, { useReducer } from "react";
 
 enum actions {
   ADD_COMMENT,
@@ -29,10 +29,10 @@ export default function Comments() {
   const [comments, dispatchComments] = useReducer(commentsReducer, [
     {
       id: 1,
-      content: "Buenas como se llama el local?",
+      content: "Hola hay stock?",
       answer: {
         id: 1,
-        content: "Hola si tenemos stock, somos multiventas az",
+        content: "Hola si tenemos stock!",
         date: "2022/05/2",
       },
       date: "2022/05/2",
@@ -54,6 +54,8 @@ export default function Comments() {
 
       dispatchComments({ type: actions.ADD_COMMENT, payload: newComment });
     }
+
+    event.target[0].value = "";
   }
 
   return (
@@ -170,7 +172,7 @@ export default function Comments() {
                       marginInlineStart={2}
                       width="fit-content"
                     >
-                      {comment.answer.date}
+                      {new Date(comment.answer.date).toLocaleDateString()}
                     </Text>
                   </Text>
                   <Link fontSize="14px">Denunciar</Link>

@@ -4,7 +4,7 @@ import type { Product } from "src/product/types";
 
 export default function Attributes({ product }: { product: Product }) {
   return (
-    <>
+    <Stack borderBlockEnd="1px" borderColor="blackAlpha.200" paddingBlock="40px" spacing={5}>
       <Text as="h2" fontSize="24px" fontWeight={400}>
         Caracteristicas principales
       </Text>
@@ -52,6 +52,6 @@ export default function Attributes({ product }: { product: Product }) {
           },
         )}
       </Stack>
-    </>
+    </Stack>
   );
 }

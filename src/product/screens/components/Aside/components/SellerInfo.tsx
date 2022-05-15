@@ -11,7 +11,14 @@ export default function SellerInfo({ product }: { product: Product }) {
   }, []);
 
   return (
-    <>
+    <Stack
+      border="1px"
+      borderColor="blackAlpha.300"
+      borderRadius="8px"
+      paddingBlock={6}
+      paddingInline={4}
+      spacing={2}
+    >
       <Text as="h2" fontSize="18px">
         Informacion del vendedor
       </Text>
@@ -87,6 +94,6 @@ export default function SellerInfo({ product }: { product: Product }) {
           <Link fontSize="14px">Ver mas datos de este vendedor</Link>
         </Box>
       </Stack>
-    </>
+    </Stack>
   );
 }

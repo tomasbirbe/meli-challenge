@@ -84,7 +84,7 @@ export default function Nav() {
               </Stack>
 
               <Stack direction="row" fontSize="14px" spacing={4}>
-                <Stack direction="row">
+                <Stack align="center" direction="row" spacing={1}>
                   <Link color="blackAlpha.600">Categorias</Link>
                   <Icon as={IoIosArrowDown} />
                 </Stack>
