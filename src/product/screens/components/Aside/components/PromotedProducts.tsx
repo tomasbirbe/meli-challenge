@@ -29,7 +29,7 @@ export default function PromotedProducts() {
                 Envio gratis
               </Text>
               <Text fontSize="14px" paddingBlockStart={1} variant="truncateMultiline">
-                Peluche Stitch 20 Cm importado Elegi tu modelo
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </Text>
             </Box>
           </Stack>
@@ -50,8 +50,9 @@ export default function PromotedProducts() {
                 Envio gratis
               </Text>
               <Text fontSize="14px" paddingBlockStart={1} variant="truncateMultiline">
-                Peluche Stitch 20 Cm importado Elegi tu
-                modelosdfgsdfgsdfgsdgsdfsdgfsdfgsdfgsdfgsdfsdf
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore culpa nulla itaque
+                cumque error ut voluptates dolores ipsum dolor recusandae delectus velit porro
+                assumenda accusamus, corrupti magnam officia? Atque, aspernatur?
               </Text>
             </Box>
           </Stack>
@@ -72,8 +73,9 @@ export default function PromotedProducts() {
                 Envio gratis
               </Text>
               <Text fontSize="14px" paddingBlockStart={1} variant="truncateMultiline">
-                Peluche Stitch 20 Cm importado Elegi tu
-                modelosdfgsdfgsdfgsdgsdfsdgfsdfgsdfgsdfgsdfsdf
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, debitis
+                temporibus unde quam nostrum nemo, maiores amet quis, eum nihil illo quaerat culpa
+                voluptates ut obcaecati aperiam error necessitatibus asperiores.
               </Text>
             </Box>
           </Stack>

@@ -1,10 +1,15 @@
+import React, { useEffect } from "react";
 import { Stack, Icon, Box, Link, Text } from "@chakra-ui/react";
 import { BiCommentCheck } from "react-icons/bi";
 import { MdTimer } from "react-icons/md";
 import { RiMapPin2Line, RiMedalLine } from "react-icons/ri";
-import React from "react";
+import type { Product } from "src/product/types";
 
-export default function SellerInfo() {
+export default function SellerInfo({ product }: { product: Product }) {
+  useEffect(() => {
+    console.log(product.seller_address.city.name);
+  }, []);
+
   return (
     <>
       <Text as="h2" fontSize="18px">
@@ -16,7 +21,8 @@ export default function SellerInfo() {
           <Stack spacing={0}>
             <Text>Ubicacion</Text>
             <Text color="blackAlpha.500" fontSize="14px">
-              Balvanera, Capital Federal
+              {product.seller_address.city.name},&nbsp;{product.seller_address.state.name},&nbsp;
+              {product.seller_address.country.name}
             </Text>
           </Stack>
         </Stack>
@@ -40,31 +46,41 @@ export default function SellerInfo() {
         <Stack
           direction="row"
           fontSize="12px"
+          justify="space-between"
           lineHeight="1"
           paddingBlockStart={2}
+          spacing={0}
           textAlign="center"
         >
           <Stack
             align="center"
             borderInlineEnd="1px"
             borderInlineEndColor="blackAlpha.300"
-            spacing={3}
+            spacing={4}
+            width="100%"
           >
             <Text fontSize="24px">3995</Text>
-            <Text color="blackAlpha.600">Ventas en los últimos 60 días</Text>
+            <Text color="blackAlpha.800" maxWidth="96px">
+              Ventas en los últimos 60 días
+            </Text>
           </Stack>
           <Stack
             align="center"
             borderInlineEnd="1px"
             borderInlineEndColor="blackAlpha.300"
             spacing={3}
+            width="100%"
           >
             <Icon as={BiCommentCheck} boxSize="27px" color="#68b744" />
-            <Text color="blackAlpha.600">Brinda buena atención</Text>
+            <Text color="blackAlpha.800" maxWidth="96px">
+              Brinda buena atención
+            </Text>
           </Stack>
-          <Stack align="center" spacing={2}>
+          <Stack align="center" spacing={2} width="100%">
             <Icon as={MdTimer} boxSize="30px" color="#68b744" />
-            <Text color="blackAlpha.600">Despacha sus productos a tiempo</Text>
+            <Text color="blackAlpha.800" maxWidth="96px">
+              Despacha sus productos a tiempo
+            </Text>
           </Stack>
         </Stack>
         <Box paddingBlockStart={4}>
