@@ -5,6 +5,21 @@ export default extendTheme({
   styles: {
     global: {
       ...cssReset,
+      // "@font-face": {
+      //   "font-family": "Proxima Nova",
+      //   src: 'url("assets/fonts/proximanova-light.woff2")',
+      //   "font-weight": "100",
+      // },
+      // "@font-face": {
+      //   "font-family": "Proxima Nova",
+      //   src: 'url("assets/fonts/proximanova-light.woff2")',
+      //   "font-weight": "normal",
+      // },
+      // "@font-face": {
+      //   "font-family": "Proxima Nova",
+      //   src: 'url("assets/fonts/proximanova-light.woff2")',
+      //   "font-weight": "500",
+      // },
       "input::placeholder": {
         color: "blackAlpha.300",
       },
